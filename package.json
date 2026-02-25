@@ -1,0 +1,21 @@
+{
+  "name": "claude-dev-team",
+  "version": "1.0.0",
+  "description": "Containerized multi-agent development team powered by the Claude Agent SDK",
+  "type": "module",
+  "scripts": {
+    "start": "node --import tsx/esm src/index.ts",
+    "dev": "tsx src/index.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "latest",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.5"
+  }
+}

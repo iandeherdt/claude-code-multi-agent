@@ -1,0 +1,19 @@
+services:
+  dev-team:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: claude-dev-team
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - WORKSPACE_DIR=/workspace
+      - MAX_TURNS=${MAX_TURNS:-60}
+      # Set DEBUG=1 to see SDK stderr output
+      - DEBUG=${DEBUG:-}
+    volumes:
+      # The Next.js app accumulates here and persists between runs on the host
+      - ./workspace:/workspace
+    # Required for interactive CLI (stdin + TTY)
+    stdin_open: true
+    tty: true
+    restart: "no"

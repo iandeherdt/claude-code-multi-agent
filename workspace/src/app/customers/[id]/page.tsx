@@ -58,7 +58,7 @@ export default function CustomerDetailPage() {
       return;
     }
     setCustomer(data);
-    setNotes(data.notes);
+    setNotes(data.treatmentNotes);
   }, [id]);
 
   useEffect(() => {

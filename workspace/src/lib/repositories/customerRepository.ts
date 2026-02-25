@@ -51,7 +51,7 @@ export class FakeCustomerRepository implements ICustomerRepository {
     return {
       ...customer,
       appointments: customerAppointments,
-      notes: customerNotes,
+      treatmentNotes: customerNotes,
     };
   }
 

@@ -58,7 +58,7 @@ export interface AppointmentWithCustomer extends Appointment {
 
 export interface CustomerWithHistory extends Customer {
   appointments: Appointment[];
-  notes: Note[];
+  treatmentNotes: Note[];
 }
 
 export type CreateCustomerPayload = Omit<Customer, "id" | "createdAt">;

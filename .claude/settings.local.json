@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:docs.claude.com)",
+      "Bash(npm info @anthropic-ai/claude-agent-sdk)",
+      "Bash(npm pack @anthropic-ai/claude-agent-sdk --dry-run)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(docker build -t claude-dev-team .)",
+      "Bash(npm install)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\(''packages'',{}\\).keys\\(\\)\\)[:20]\\)\")",
+      "Bash(docker run --rm claude-dev-team node -e \"import\\(''@anthropic-ai/claude-agent-sdk''\\).then\\(m => console.log\\(''SDK exports:'', Object.keys\\(m\\).join\\('', ''\\)\\)\\).catch\\(e => console.error\\(''ERROR:'', e.message\\)\\)\")",
+      "Bash(docker run --rm claude-dev-team node -e \":*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(docker run --rm -i -e ANTHROPIC_API_KEY=\"\" claude-dev-team node --import tsx/esm src/index.ts)",
+      "Bash(docker run --rm -i -e ANTHROPIC_API_KEY=\"sk-test-fake\" claude-dev-team node --import tsx/esm src/index.ts)"
+    ]
+  }
+}
